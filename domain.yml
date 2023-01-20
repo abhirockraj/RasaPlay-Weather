@@ -1,0 +1,55 @@
+version: "3.1"
+
+intents:
+  - greet
+  - inform
+  - goodbye
+  - affirm
+  - deny
+  - weather_info
+  - bot_challenge
+  - play
+
+entities:
+  - city
+  - choice
+
+slots :
+  choice :
+    type : categorical
+    values :
+      - rock
+      - paper
+      - scissors
+    mappings:
+    - type : from_entity
+      entity: choice    
+  city:
+    type : text
+    mappings:
+      - type : from_entity
+        entity: city  
+
+responses:
+  utter_choose:
+  - text: "Do u want to play or do u want to know the weather of a city ?"
+  
+  utter_play:
+  - text: "Type 'rock', 'paper' or 'scissors' to play"
+
+  utter_play_again:
+    - text : "Do you want to play again?"
+  
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_play_rps
+  - action_wether_info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
