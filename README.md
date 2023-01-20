@@ -6,7 +6,7 @@ This is a custom chatbot which can play rock, paper or sicciors and can tell wea
 
 ## Installation
 
-Install my-project by create a python virtual Environment
+To run the project install  python 
 
 ```bash
   Install Python 3.9
